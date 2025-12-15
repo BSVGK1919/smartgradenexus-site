@@ -60,5 +60,24 @@
     // Fallback
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
+  // Simple scroll reveal
+document.querySelectorAll(".item, .post, .stat, .card, .panel").forEach((el) => {
+  el.style.opacity = "0";
+  el.style.transform = "translateY(10px)";
+});
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.style.transition = "opacity .6s ease, transform .6s ease";
+      e.target.style.opacity = "1";
+      e.target.style.transform = "translateY(0)";
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".item, .post, .stat, .card, .panel").forEach(el => io.observe(el));
+
 
 })();
