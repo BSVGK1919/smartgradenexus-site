@@ -24,6 +24,7 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
+
 /* Accessibility / professional polish */
 :focus-visible{
   outline: 3px solid rgba(105,83,160,.35);
@@ -833,4 +834,61 @@ img{max-width:100%;display:block}
 
 .hamburger span {
   background: #4C1D95;
+}
+/* ===== HERO: DXC-STYLE TOP STRIP (NO CIRCLE / NO BLOB) ===== */
+.hero{
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+
+  /* main hero background (clean, premium) */
+  background: #0b0f19;
+}
+
+/* Top colour strip only */
+.hero::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:0;
+
+  /* STRIP HEIGHT */
+  height: 240px;
+
+  /* HARD COLOUR BANDS (horizontal strip) */
+  background: linear-gradient(90deg,
+    #3b82f6 0% 10%,
+    #6366f1 10% 22%,
+    #7c3aed 22% 34%,
+    #a855f7 34% 46%,
+    #ec4899 46% 58%,
+    #f97316 58% 70%,
+    #f59e0b 70% 82%,
+    #84cc16 82% 92%,
+    #22c55e 92% 100%
+  );
+
+  opacity: 0.35;
+  filter: saturate(1.1) contrast(1.05);
+}
+
+/* Dark fade so strip blends into the hero background (DXC-ish) */
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:0;
+  height: 380px;
+  background: linear-gradient(
+    180deg,
+    rgba(11,15,25,0.10) 0%,
+    rgba(11,15,25,0.70) 55%,
+    rgba(11,15,25,1.00) 100%
+  );
+}
+
+/* keep content above layers */
+.hero .container{
+  position: relative;
+  z-index: 1;
 }
