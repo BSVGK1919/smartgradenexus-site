@@ -765,3 +765,72 @@ img{max-width:100%;display:block}
   .hero-card{ padding: 28px; border-radius: 22px; }
   .hero-title{ font-size: clamp(40px, 10vw, 56px); }
 }
+/* ===== TOP NAV BAR – WHITE THEME ===== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff; /* solid white */
+  border-bottom: 1px solid #E5E7EB;
+  backdrop-filter: none;
+}
+
+/* Brand text */
+.brand .name .row1,
+.brand .name .row2 {
+  color: #3B2A7A; /* deep purple */
+  font-weight: 900;
+}
+
+.brand .name .smart {
+  color: #6953A0; /* brand purple */
+  font-weight: 900;
+}
+
+/* Navigation links */
+.links a {
+  color: #4C1D95; /* purple text */
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.links a:hover {
+  background: rgba(105, 83, 160, 0.08);
+  color: #2E1065; /* darker purple */
+}
+
+/* Active page highlight (optional) */
+.links a.active {
+  background: rgba(105, 83, 160, 0.15);
+  color: #2E1065;
+}
+
+/* Buttons in header */
+.actions .btn-outline {
+  border-color: #6953A0;
+  color: #6953A0;
+}
+
+.actions .btn-outline:hover {
+  background: rgba(105, 83, 160, 0.1);
+}
+
+.actions .btn-primary {
+  background: #6953A0;
+  color: #ffffff;
+}
+
+.actions .btn-primary:hover {
+  background: #5B45A0;
+}
+
+/* Hamburger icon */
+.hamburger {
+  background: #ffffff;
+  border: 1px solid #D1D5DB;
+}
+
+.hamburger span {
+  background: #4C1D95;
+}
